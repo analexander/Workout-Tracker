@@ -15,11 +15,15 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true }, { useUnifiedTopology: true });
 
-app.use(require("./routes/api.js"));
-
-app.use(require("./routes/view.js"));
+db.Workout.create({ name: "Workouts" })
+  .then(dbWorkout => {
+    console.log(dbWorkout);
+  })
+  .catch(({message}) => {
+    console.log(message);
+  });
 
 // db.User.create({ name: "Ernest Hemingway" })
 //   .then(dbUser => {
@@ -70,6 +74,9 @@ app.use(require("./routes/view.js"));
 //       res.json(err);
 //     });
 // });
+
+require('./routes/api')(app);
+// require('./routes/view')(app);
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
