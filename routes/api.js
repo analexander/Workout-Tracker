@@ -12,25 +12,24 @@ module.exports = function (app) {
             .catch(err => {
                 res.json(err);
             });
-    })
+    });
 
-    app.put('/api/workouts/:id', ({ body, params }, res) => {
-        db.Workout.create(body, params)
-            .then(db.Workout.findOneAndUpdate({},
-                { _id: req.params.id },
-                {
-                    $inc: { totalDuration: req.body.duration },
-                    $push: { exercises: req.body }
-                },
-                { new: true }))
+    app.put("/api/workouts/:id", (req, res) => {
+
+        db.Workout.findOneAndUpdate(
+            { _id: req.params.id },
+            {
+                $inc: { totalDuration: req.body.duration },
+                $push: { exercises: req.body }
+            },
+            { new: true })
             .then(dbWorkout => {
                 res.json(dbWorkout);
-            })
-            .catch(err => {
+            }).catch(err => {
                 res.json(err);
             });
 
-    })
+    });
 
     app.get('/api/workouts', (req, res) => {
         db.Workout.find({})
@@ -47,7 +46,7 @@ module.exports = function (app) {
             .catch(err => {
                 res.json(err);
             });
-    })
+    });
 
     app.get('/api/workouts/range', (req, res) => {
         db.Workout.find({})
@@ -57,10 +56,10 @@ module.exports = function (app) {
             .catch(err => {
                 res.json(err);
             });
-    })
+    });
 
     app.delete('/api/workouts', ({ body }, res) => {
 
-    })
+    });
 
 }
