@@ -14,7 +14,7 @@ This is an application that uses a Mongo database with a Mongoose schema and han
 
 * [Usage](#Usage)
 
-* [Deployed App](#Deployed App)
+* [Application](#DeployedApp)
 
 * [License](#License)
 
@@ -35,7 +35,7 @@ Upon the page loading, the user will be presented with their previous workout lo
 
 ![gif walkthrough](./public/images/fitness-tracker-walkthrough.gif)
 
-## Deployed App
+## Application
 
 The application can be viewed/used at this link: https://powerful-journey-03401.herokuapp.com/
 
