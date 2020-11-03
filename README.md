@@ -14,6 +14,8 @@ This is an application that uses a Mongo database with a Mongoose schema and han
 
 * [Usage](#Usage)
 
+* [Deployed App](#Deployed App)
+
 * [License](#License)
 
 * [Contributing](#Contributing)
@@ -32,6 +34,10 @@ npm install
 Upon the page loading, the user will be presented with their previous workout log (if they had already entered one) or some text saying that they haven't added any workouts. The user is able to add exercises to a previous workout plan or add new exercises to a new workout plan. The user can also see the combined weight of multiple exercises on the stats page.
 
 ![gif walkthrough](./public/images/fitness-tracker-walkthrough.gif)
+
+## Deployed App
+
+The application can be viewed/used at this link: https://powerful-journey-03401.herokuapp.com/
 
 
 ## License
